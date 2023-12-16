@@ -69,6 +69,7 @@ class MainWindow(QMainWindow):
 
         #tabWidget
         MW_Layout.addWidget(self.tabWidget, 0, 0, 4, 4)
+        self.tabWidget.currentChanged.connect(self.__updateTable)
 
         MW_Layout.addWidget(self.addRowButton, 5, 2)
         self.addRowButton.setText('Add new row')
@@ -147,6 +148,10 @@ class MainWindow(QMainWindow):
             self.tabWidget.addTab(t_widget, t_widget.name)
         self.addRowButton.show()
         self.__contextMenuEnabled = True
+
+    def __updateTable(self):
+        t_name = self.tabWidget.currentWidget().model_name
+        self.db.fillModel(self.TML[t_name])
 
     def __addRowDialogInit(self):
         t_name = self.tabWidget.currentWidget().model_name
