@@ -1,0 +1,54 @@
+{   
+    "path": "database.db",
+    "tables": {
+        "Authors": {
+        "display_name": "Authors",
+        "columns": {
+            "AuthorName": {
+                "display_name": "Author name",
+                "type": "text"
+            },
+            "BirthDate": {
+                "display_name": "Date of birth",
+                "type": "date"
+            },
+            "Salary": {
+                "display_name": "Salary",
+                "type": "real"
+            },
+            "Num_cats": {
+                "display_name": "Number of cats",
+                "type": "integer"
+            }
+        }
+        },
+        "Knihi": {
+            "display_name": "Books",
+            "columns": {
+                "AuthorID": {
+                    "foreign-key": {
+                        "table": "Authors",
+                        "column": "ID",
+                        "display_column": "AuthorName"
+                    }
+                },
+                "Title": {
+                    "display_name": "Title",
+                    "type": "text"
+                },
+                "ReleaseDate": {
+                    "display_name": "Release Date",
+                    "type": "date"
+                },
+                "Cost": {
+                    "display_name": "Cost",
+                    "type": "real"
+                },
+                "Copys": {
+                    "display_name": "Number of copys",
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

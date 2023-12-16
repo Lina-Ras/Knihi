@@ -1,0 +1,54 @@
+{   
+    "path": "database.db",
+    "tables": {
+        "T1": {
+        "display_name": "First table",
+        "columns": {
+            "RandomText": {
+                "display_name": "Really important text!",
+                "type": "text"
+            },
+            "RandomDate": {
+                "display_name": "Not a random date",
+                "type": "date"
+            }
+        }
+        },
+        "T2": {
+            "display_name": "Second table",
+            "columns": {
+                "FForeignID": {
+                    "foreign-key": {
+                        "table": "T1",
+                        "column": "ID",
+                        "display_column": "RandomText"
+                    }
+                },
+                "SForeignID": {
+                    "foreign-key": {
+                        "table": "T3",
+                        "column": "ID",
+                        "display_column": "RandomText"
+                    }
+                },
+                "RandomText": {
+                    "display_name": "Another text...",
+                    "type": "text"
+                },
+                "RandInt": {
+                    "display_name": "Some integer",
+                    "type": "integer"
+                }
+            }
+        },
+        "T3": {
+            "display_name": "Third table",
+            "columns": {
+                "RandomText": {
+                    "display_name": "Text! Text! Text!",
+                    "type": "text"
+                }
+            }
+        }
+    }
+}
