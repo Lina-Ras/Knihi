@@ -76,6 +76,8 @@ class mainDialog(QtWidgets.QDialog):
                     res += [datetime.date(year, month, day).strftime('%Y-%m-%d')]
                 elif str.lower(dtype) == 'text':
                     res += [inp_widget.toPlainText()]
+                elif str.lower(dtype) == 'real':
+                    res += [inp_widget.text().replace(',', '.')]
                 else:
                     res += [inp_widget.text()]
         return res

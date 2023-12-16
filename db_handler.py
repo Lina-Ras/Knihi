@@ -65,7 +65,7 @@ class dataBase:
                 inputed_data = self.__checkRow(t_model, id)
 
         except Exception as ex:
-            print(f'Exception while addin into DB: {ex}')
+            print(f'Exception while adding into DB: {ex}')
             return False, None
         
         return True, inputed_data
