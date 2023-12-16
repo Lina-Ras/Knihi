@@ -150,8 +150,9 @@ class MainWindow(QMainWindow):
         self.__contextMenuEnabled = True
 
     def __updateTable(self):
-        t_name = self.tabWidget.currentWidget().model_name
-        self.db.fillModel(self.TML[t_name])
+        if self.tabWidget.currentWidget() is not None:
+            t_name = self.tabWidget.currentWidget().model_name
+            self.db.fillModel(self.TML[t_name])
 
     def __addRowDialogInit(self):
         t_name = self.tabWidget.currentWidget().model_name
